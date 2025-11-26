@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nodejs-vqhbqymo-gitops
+  description: This is GitOps manifest for nodejs-vqhbqymo   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=nodejs-vqhbqymo
+    backstage.io/kubernetes-id: nodejs-vqhbqymo 
+    backstage.io/techdocs-ref: dir:. 
+    github.com/project-slug: sjm-rhtap/nodejs-vqhbqymo-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nodejs-vqhbqymo
